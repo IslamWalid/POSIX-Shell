@@ -24,7 +24,7 @@ The shell can be used to run any other command by typing the absolute path of it
 ***note:*** tiny-shell doesn't support *pagers*.
 
 ## Source:
-- `job.c`: contains the data structure that keeps track the created jobs and store its data.
-- `sighandler.c`: contains the implementation for the customized signal handlers.
+- `job.c`: contains the data structure that keeps track of the created jobs and store its data.
+- `sighandler.c`: contains the implementation of the customized signal handlers.
 - `tiny-shell.c`: contains the functions that parse and evaluate the commands.
 - `wrappers.c`: contains wrappers for the used system calls to check their return values.
