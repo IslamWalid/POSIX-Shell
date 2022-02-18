@@ -23,8 +23,24 @@ The shell can be used to run any other command by typing the absolute path of it
 
 ***note:*** tiny-shell doesn't support *pagers*.
 
+## How to test it?
+- `tests` contain trace files provided with lab-handouts.
+- Run each trace on tshref and tsh then compare the outputs.
+
+For example, you can run trace `trace14` on tsh by using the following command:
+```
+make test14
+```
+
+You can run `trace14` also on tshref by using the following command:
+```
+make rtest14
+```
+
 ## Source:
 - `job.c`: contains the data structure that keeps track of the created jobs and store its data.
 - `sighandler.c`: contains the implementation of the customized signal handlers.
 - `tiny-shell.c`: contains the functions that parse and evaluate the commands.
 - `wrappers.c`: contains wrappers for the used system calls to check their return values.
+- `sdriver.pl`: program used to run the traces on my shell.
+- `tshref`: reference tsh program provided with lab-hanouts to compare tsh outputs with.
