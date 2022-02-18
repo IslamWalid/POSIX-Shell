@@ -2,14 +2,19 @@
  * tsh - A tiny shell program with job control
  */
 
+#include "job.h"
+#include "wrapper.h"
 #include "tinyshell.h"
 #include "sighandler.h"
-#include "wrapper.h"
+#include <stdio.h>
+#include <signal.h>
+#include <unistd.h>
 
 /* Global variables */
 
 char prompt[] = "tsh> "; /* command line prompt */
 int verbose = 0;         /* if true, print additional output */
+extern job_t jobs[MAXJOBS]; /* defined in job.c */
 
 /*
  * main - The shell's main routine 

@@ -1,9 +1,6 @@
 #ifndef SIG_HANDLER_H
 #define SIG_HANDLER_H
 
-#include "job.h"
-#include "wrapper.h"
-
 /* 
  * sigchld_handler - The kernel sends a SIGCHLD to the shell whenever
  *     a child job terminates (becomes a zombie), or stops because it

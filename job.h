@@ -1,10 +1,7 @@
 #ifndef JOB_H
 #define JOB_H
 
-#include <sys/types.h>
 #include <stdlib.h>
-#include <stdio.h>
-#include <string.h>
 
 /* Misc manifest constants */
 #define MAXLINE 1024   /* max line size */
@@ -35,8 +32,6 @@ typedef struct job
     int state;             /* UNDEF, BG, FG, or ST */
     char cmdline[MAXLINE]; /* command line */
 } job_t;
-
-extern job_t jobs[MAXJOBS];
 
 /* clearjob - Clear the entries in a job struct */
 void clearjob(job_t *job);

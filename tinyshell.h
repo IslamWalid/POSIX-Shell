@@ -1,11 +1,7 @@
 #ifndef TINYSHELL_H
 #define TINYSHELL_H
 
-#include "job.h"
-#include "wrapper.h"
-#include <ctype.h>
-
-extern char **environ; /* defined in libc */
+#include <stdlib.h>
 
 /* 
  * eval - Evaluate the command line that the user has just typed in

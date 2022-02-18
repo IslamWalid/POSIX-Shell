@@ -1,4 +1,11 @@
 #include "sighandler.h"
+#include "wrapper.h"
+#include "job.h"
+#include <sys/wait.h>
+#include <stdio.h>
+#include <errno.h>
+
+extern job_t jobs[MAXJOBS];
 
 void sigchld_handler(int sig)
 {

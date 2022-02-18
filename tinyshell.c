@@ -1,7 +1,15 @@
 #include "tinyshell.h"
+#include "job.h"
+#include "wrapper.h"
+#include <signal.h>
+#include <stdio.h>
+#include <string.h>
+#include <ctype.h>
 
 /* static functions decleration */
 static int isvalid(char *id);
+extern char **environ;
+extern job_t jobs[MAXJOBS];
 
 void eval(char *cmdline)
 {

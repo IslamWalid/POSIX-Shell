@@ -1,4 +1,6 @@
 #include "job.h"
+#include <stdio.h>
+#include <string.h>
 
 job_t jobs[MAXJOBS];    /* The job list */
 static int nextjid = 1; /* next job ID to allocate */
