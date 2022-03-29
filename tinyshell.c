@@ -1,10 +1,12 @@
+#include <ctype.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <signal.h>
+
 #include "tinyshell.h"
 #include "job.h"
 #include "wrapper.h"
-#include <signal.h>
-#include <stdio.h>
-#include <string.h>
-#include <ctype.h>
 
 /* static functions decleration */
 static int isvalid(char *id);
@@ -103,7 +105,7 @@ int builtin_cmd(char **argv)
 {
     int builtin_cmd = 1;
     if (strcmp(argv[0], "quit") == 0)
-        exit(0);
+        abort();
     else if (strcmp(argv[0], "jobs") == 0)
         listjobs(jobs);
     else if (strcmp(argv[0], "bg") == 0)

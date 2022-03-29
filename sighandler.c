@@ -1,6 +1,7 @@
 #include "sighandler.h"
 #include "wrapper.h"
 #include "job.h"
+#include <stdlib.h>
 #include <sys/wait.h>
 #include <stdio.h>
 #include <errno.h>
@@ -70,6 +71,11 @@ void sigtstp_handler(int sig)
 
 void sigquit_handler(int sig)
 {
+    sigset_t mask_all, prev_mask;
+
+    Sigfillset(&mask_all);
+    Sigprocmask(SIG_SETMASK, &mask_all, &prev_mask);
     printf("Terminating after receipt of SIGQUIT signal\n");
-    exit(1);
+    Sigprocmask(SIG_SETMASK, &prev_mask, NULL);
+    abort();
 }
