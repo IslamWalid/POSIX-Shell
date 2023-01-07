@@ -1,4 +1,4 @@
-# Tiny Shell
+# POSIX Shell
 
 
 ## Description
